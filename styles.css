@@ -1,0 +1,54 @@
+body {
+  background-color: rgb(41, 107, 168);
+}
+.error {
+  color: red;
+}
+.cen {
+  position: absolute;
+  left: 30%;
+  top: 5%;
+  display: flex;
+  justify-content: center;
+  background-color: aliceblue;
+  width: 40%;
+  padding-bottom: 80px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px rgba(20, 20, 20, 0.1);
+}
+button {
+  position: relative;
+  left: 10px;
+  border-radius: 8px;
+  width: 5rem;
+  height: 2rem;
+  color: aliceblue;
+  border: none;
+  background-color: rgb(168, 77, 168);
+  margin-left: 10px;
+}
+button:hover {
+  background-color: rgb(59, 150, 51);
+}
+button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.list {
+  position: absolute;
+  left: 30%;
+  top: 5%;
+  padding: 10px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  width: fit-content;
+}
+main.ng-enter{
+    transition: 0.5s linear all;
+    opacity: 0;
+}
+main.ng-enter.ng-enter-active{
+    opacity: 2;
+}

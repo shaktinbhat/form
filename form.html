@@ -1,0 +1,45 @@
+<div ng-app="" class="cen">
+    <div  ng-controller="FormsController">
+    <form name="myForm" novalidate="" ng-model="formDetails" >
+      <h1>Enter Details</h1>
+      <label>Full Name</label><br>
+      <input type="text" name="name" ng-model="name" pattern="[a-zA-Z]{1,}" required=""/><br />
+      <span ng-show="myForm.$submitted || myForm.name.$dirty"><span class="error" ng-show="myForm.name.$error.required"> Name Required</span>
+      <span class="error" ng-show="myForm.name.$error.pattern"> Name cannot be Number</span></span><br /><br />
+      <label>Gender</label><br /><br>
+      <input type="radio" name="gender" ng-model="gender" ng-value='"Male"' required=""/>
+      <label>Male</label>
+      <input type="radio" name="gender" ng-model="gender" ng-value='"Female"' required=""/>
+      <label>Female</label>
+      <span ng-show="myForm.$submitted || myForm.gender.$dirty">
+          <span class="error" ng-show="myForm.gender.$error.required"> Gender Required</span>
+          </span><br /><br />
+          <label>Date of Birth</label><br>
+          <input type="date" name="date" ng-model="date"    required="" />
+     <br /><span ng-show="myForm.$submitted || myForm.date.$dirty">
+         <span class="error" ng-show="myForm.date.$error.required">
+             Date of BirthRequired</span></span><br /><br />
+           <label>Phone Number</label><br>
+           <input type="number" name="phone" ng-model="phone" ng-minlength="10" ng-maxlength="10"required=""/><br />
+        <span ng-show="myForm.$submitted || myForm.phone.$dirty">
+            <span class="error" ng-show="myForm.phone.$error.required"> Phone Number Required</span>
+            <span class="error"ng-show="((myForm.phone.$error.minlength || myForm.phone.$error.maxlength) &amp;&amp; myForm.phone.$dirty)">
+                 Phone Number Should be 10digits</span >
+                 </span><br /><br />
+      <label>Course</label><br>
+      <select name="course" ng-model="course" required="">
+        <option>BE</option>
+        <option>BA</option>
+        <option>BCA</option>
+        <option>BSC</option></select><br />
+        <span ng-show="myForm.$submitted || myForm.course.$dirty">
+            <span class="error" ng-show="myForm.course.$error.required">Course Required</span></span><br /><br />
+            <div class="bt">
+            <button type="button" ng-click="clear()">Clear</button>
+            <button type="submit" ng-click="save()">Save</button>
+            <button ng-click="display()" >Display</button><br><br>
+          </div>
+            
+    </form>
+    </div>
+  </div>
